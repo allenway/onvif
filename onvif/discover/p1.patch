@@ -1,0 +1,20 @@
+diff -uN -r discover_v0/RemoteDiscoveryBinding.nsmap discover_v1/RemoteDiscoveryBinding.nsmap
+--- discover_v0/RemoteDiscoveryBinding.nsmap	2016-01-26 10:51:09.802831000 +0800
++++ discover_v1/RemoteDiscoveryBinding.nsmap	2016-01-26 10:51:09.794827001 +0800
+@@ -9,5 +9,6 @@
+ 	{"wsa", "http://schemas.xmlsoap.org/ws/2004/08/addressing", NULL, NULL},
+ 	{"wsdd", "http://schemas.xmlsoap.org/ws/2005/04/discovery", NULL, NULL},
+ 	{"tdn", "http://www.onvif.org/ver10/network/wsdl", NULL, NULL},
++	{"tds", "http://www.onvif.org/ver10/device/wsdl", NULL, NULL},//add by liulu
+ 	{NULL, NULL, NULL, NULL}
+ };
+diff -uN -r discover_v0/wsdd.nsmap discover_v1/wsdd.nsmap
+--- discover_v0/wsdd.nsmap	2016-01-26 10:51:09.802831000 +0800
++++ discover_v1/wsdd.nsmap	2016-01-26 10:51:09.794827001 +0800
+@@ -9,5 +9,6 @@
+ 	{"wsa", "http://schemas.xmlsoap.org/ws/2004/08/addressing", NULL, NULL},
+ 	{"wsdd", "http://schemas.xmlsoap.org/ws/2005/04/discovery", NULL, NULL},
+ 	{"tdn", "http://www.onvif.org/ver10/network/wsdl", NULL, NULL},
++	{"tds", "http://www.onvif.org/ver10/device/wsdl", NULL, NULL},//add by liulu
+ 	{NULL, NULL, NULL, NULL}
+ };

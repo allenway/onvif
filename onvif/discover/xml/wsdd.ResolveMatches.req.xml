@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope
+  xmlns:SOAP-ENV="http://www.w3.org/2003/05/soap-envelope"
+  xmlns:SOAP-ENC="http://www.w3.org/2003/05/soap-encoding"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing"
+  xmlns:wsdd="http://schemas.xmlsoap.org/ws/2005/04/discovery"
+  xmlns:tdn="http://www.onvif.org/ver10/network/wsdl">
+ <SOAP-ENV:Header>
+ </SOAP-ENV:Header>
+ <SOAP-ENV:Body>
+   <wsdd:ResolveMatches>
+    <wsdd:ResolveMatch>
+     <wsa:EndpointReference>
+      <wsa:Address></wsa:Address>
+      <wsa:ReferenceProperties>
+       <!-- extensibility element(s) -->
+
+       <!-- extensibility element(s) -->
+
+      </wsa:ReferenceProperties>
+      <wsa:ReferenceParameters>
+       <!-- extensibility element(s) -->
+
+       <!-- extensibility element(s) -->
+
+      </wsa:ReferenceParameters>
+      <wsa:PortType></wsa:PortType>
+      <wsa:ServiceName PortName=""></wsa:ServiceName>
+      <!-- extensibility element(s) -->
+
+      <!-- extensibility element(s) -->
+
+     </wsa:EndpointReference>
+     <wsdd:Types></wsdd:Types>
+     <wsdd:Scopes MatchBy=""></wsdd:Scopes>
+     <wsdd:XAddrs></wsdd:XAddrs>
+     <wsdd:MetadataVersion>0</wsdd:MetadataVersion>
+    </wsdd:ResolveMatch>
+   </wsdd:ResolveMatches>
+
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
