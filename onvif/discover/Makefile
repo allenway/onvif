@@ -1,7 +1,8 @@
 #create by liulu
 #TARGET生成的程序名
+SHELL = bash
 TARGET = wsdd
-CONFIGURE = ./configure.sh
+CONFIGURE = ./configure
 P1 = p1.patch
 
 #依赖的目标文件，由对应的.c或.cpp生成
@@ -35,7 +36,9 @@ $(TARGET): $(OBJ)
 	$(LD) $^ -o $@
 config:
 	$(CONFIGURE)
-	patch -p1 < $(P1)
+ifneq ($(P1),)
+		patch -p1 < $(P1)
+endif
 
 #清除所有文件包括config生成的源文件
 distclean:clean config_clean

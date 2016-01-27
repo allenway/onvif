@@ -1,7 +1,8 @@
 #create by liulu
 #TARGET生成的程序名
+SHELL = bash
 TARGET = mgmt
-CONFIGURE = ./configure.sh
+CONFIGURE = ./configure
 #P1 = p1.patch
 
 #依赖的目标文件，由对应的.c或.cpp生成

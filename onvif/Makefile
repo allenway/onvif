@@ -1,5 +1,6 @@
 #create by liulu
 #TARGET生成的程序名
+SHELL = bash
 TARGET = rhanvr
 CONFIGURE = ./configure
 #P1 = p1.patch
@@ -10,7 +11,7 @@ GSOAP_DIR = ../gosap-2.8/gsoap
 OBJ += main.o
 
 #依赖的模块
-MODULE += discover
+MODULE += discover devicemgmt
 #依赖的静态库
 LIBA += discover/libdiscover.a
 #依赖的动态库
@@ -39,16 +40,54 @@ $(TARGET):$(LIBA) $(LIBSO) $(OBJ)
 
 #编译模块
 module_config:
+#默认会使用make config去配置相应的模块
+#如果对应的模块不支持make config命令，则会调用模块中configure
 	@echo $@ ...
+	@for d in $(MODULE); \
+	do 					 \
+		if [ -d $$d ];then 	 \
+			echo config $$d ;   	\
+			make -C $$d config ;    \
+			ret=$$?;	\
+			if [ $$ret -ne 0 ];then 	 \
+				pushd .;cd $$d;./configure;ret=$$?;popd; \
+			fi;  \
+			if [ $$ret -ne 0 ];then 	 \
+				echo config $$d error; \
+				ret=$$?;	\
+			else	\
+				echo config $$d successful; \
+			fi;  \
+			echo config $$d complete ; \
+		fi;  \
+	done
 	@echo $@ complete!
 module:
 	@echo $@ ...
+	$(foreach dir,$(MODULE),make -C $(dir))
 	@echo $@ complete!
 module_distclean:
 	@echo $@ ...
+	$(foreach dir,$(MODULE),make -C $(dir) distclean)
 	@echo $@ complete!
 module_clean:
+#gsoap目录不进行clean动作,以减少编译时间
 	@echo $@ ...
+	@for d in $(MODULE); \
+	do 					 \
+		if [ -d $$d ];then 	 \
+			case $$d in 	 \
+				#不清空gsoap目录,只在执行distclean才清空gsoap,节约编译时间 \
+				gsoap*)	 	 \
+					;;		 \
+				*)			 \
+					echo clean $$d ;   			\
+					make -C $$d clean ;    		\
+					echo clean $$d complete ;  	\
+					;;	\
+			esac	\
+		fi  \
+	done
 	@echo $@ complete!
 
 #清除所有文件包括config生成的源文件

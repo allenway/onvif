@@ -37,7 +37,7 @@ if [ "$1" == "clean" ];then
 else 
     echo $url 
     # -c 表示生成c代码，默认生产cpp代码
-    wsdl2h -c -s -t../gsoap/typemap.dat -o onvif.h $url
+    wsdl2h -c -s -t../gsoap-2.8/gsoap/typemap.dat -o onvif.h $url
     if [ $? -ne 0 ];then
         echo "Error"
         exit -1
