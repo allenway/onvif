@@ -1,8 +1,7 @@
 #create by liulu
 #TARGET生成的程序名
-SHELL = bash
 TARGET = mgmt
-CONFIGURE = ./configure
+CONFIGURE = ./configure.sh
 #P1 = p1.patch
 
 #依赖的目标文件，由对应的.c或.cpp生成
@@ -14,7 +13,7 @@ OBJ += soapClient.o
 #OBJ += soapClientLib.o  
 
 #gsoap源码目录
-GSOAP_DIR = ../gsoap-2.8/gsoap
+GSOAP_DIR = ../gsoap
 #直接使用源码文件链接，这样就不需要使用-lgsoap++
 OBJ += $(GSOAP_DIR)/stdsoap2.o
 OBJ += $(GSOAP_DIR)/custom/duration.o

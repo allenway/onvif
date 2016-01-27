@@ -5,8 +5,8 @@ TARGET = rhanvr
 CONFIGURE = ./configure
 #P1 = p1.patch
 #gsoap源码目录
-GSOAP_DIR = ../gosap-2.8/gsoap
-
+GSOAP_DIR ?= ../gosap-2.8
+GSOAP_SDK = $(GSOAP_DIR)/gsoap
 #依赖的目标文件，由对应的.c或.cpp生成
 OBJ += main.o
 
@@ -22,9 +22,9 @@ LIBSO +=
 CC = $(CROSS_COMPILE)gcc
 CPP = $(CROSS_COMPILE)g++
 CFLAGS += -I. 
-CFLAGS += -I$(GSOAP_DIR)
+CFLAGS += -I$(GSOAP_SDK)
 CPPFLAGS += -I. 
-CPPFLAGS += -I$(GSOAP_DIR)
+CPPFLAGS += -I$(GSOAP_SDK)
 
 #链接器，使用ld会有问题,使用g++
 LD = $(CROSS_COMPILE)g++

@@ -118,14 +118,14 @@ ERR0:
 	soap_free(serv);
 	return ret;
 }
- 
 int main()
 {
 	int ret;
 	char *endpoint = "soap.udp://239.255.255.250:3702";
 	char *types = NULL;
 	char *scopes = NULL;
-	
+	soap_new();
+	soap_begin(NULL);
 	while(1)
 	{
 		ret = 0;
@@ -145,6 +145,7 @@ int main()
 		else
 			printf("probe successful\n");
 		sleep(5);
+		
 	}
 	return 0;
 } 

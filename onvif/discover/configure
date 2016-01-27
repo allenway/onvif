@@ -42,7 +42,8 @@ else
         echo "Error"
         exit -1
     fi
-    soapcpp2 -I../gsoap/ onvif.h
+    soapcpp2 -I../gsoap-2.8/gsoap/ onvif.h
+    soapcpp2 onvif.h
     if [ $? -ne 0 ];then
         echo "Error"
         exit -1
