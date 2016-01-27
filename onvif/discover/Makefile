@@ -13,7 +13,7 @@ OBJ += soapClient.o
 #OBJ += soapClientLib.o  
 
 #gsoap源码目录
-GSOAP_DIR = ../gsoap
+GSOAP_DIR = ../gsoap-2.8/gsoap
 #直接使用源码文件链接，这样就不需要使用-lgsoap++
 OBJ += $(GSOAP_DIR)/stdsoap2.o
 #OBJ += $(GSOAP_DIR)/custom/duration.o

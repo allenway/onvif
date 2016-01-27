@@ -14,7 +14,7 @@ int main()
 
 	services.IncludeCapability = xsd__boolean__true_;
 	ret = soap_call___tds__GetServices(soap,
-			"http://192.168.110.71/onvif/device_service",
+			"http://192.168.110.128/onvif/device_service",
 			NULL,	//soap action
 			&services,
 			&servicesResponse);

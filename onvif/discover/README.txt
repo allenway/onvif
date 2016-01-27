@@ -3,7 +3,7 @@ create by liulu
 功能:WS-Discover实现，用于探测当前网络内的IPC或提供Discover供客户端探测
 ======================================
 目录结构            #
-configure.sh        #自动产生gsoap代码,被Makefile调用
+configure        #自动产生gsoap代码,被Makefile调用
 Makefile            #编译脚本
 p1.patch            #补丁文件
 main.c              #测试程序

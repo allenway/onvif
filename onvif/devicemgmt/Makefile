@@ -13,7 +13,7 @@ OBJ += soapClient.o
 #OBJ += soapClientLib.o  
 
 #gsoap源码目录
-GSOAP_DIR = ../gsoap
+GSOAP_DIR = ../gsoap-2.8/gsoap
 #直接使用源码文件链接，这样就不需要使用-lgsoap++
 OBJ += $(GSOAP_DIR)/stdsoap2.o
 OBJ += $(GSOAP_DIR)/custom/duration.o
@@ -24,7 +24,7 @@ OBJ += $(GSOAP_DIR)/custom/duration.o
 #CROSS_COMPILE = arm-fsl-linux-gnueabi-
 CC = $(CROSS_COMPILE)gcc
 CPP = $(CROSS_COMPILE)gcc
-CFLAGS += -I.
+CFLAGS += -I. 
 CFLAGS += -I$(GSOAP_DIR)
 #CPPFLAGS += -I.
 #链接器，使用ld会有问题,使用g++
@@ -32,7 +32,7 @@ LD = $(CROSS_COMPILE)gcc
 
 all: $(TARGET)
 $(TARGET): $(OBJ)
-	$(LD) $^ -o $@
+	$(LD) $^  -o $@
 config:
 	$(CONFIGURE)
 ifneq ($(P1),)
