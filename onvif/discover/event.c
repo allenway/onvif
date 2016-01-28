@@ -1,7 +1,7 @@
 //create by liulu, 2016-1-20
 //实现discover event，当发生对应的event时，会调用到对应的处理函数
-#include "soapH.h"
-#include "../gsoap/plugin/wsddapi.h"
+#include "discoverH.h"
+#include "../plugin/wsddapi.h"
 #include <stdio.h>
 
 void wsdd_event_Hello (struct soap *soap, unsigned int InstanceId, const char *SequenceId, unsigned int MessageNumber, const char *MessageID, const char *RelatesTo, const char *EndpointReference, const char *Types, const char *Scopes, const char *MatchBy, const char *XAddrs, unsigned int MetadataVersion)

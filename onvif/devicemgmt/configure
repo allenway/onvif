@@ -25,16 +25,16 @@ url+="http://www.onvif.org/onvif/ver10/device/wsdl/devicemgmt.wsdl   "
 #url+="http://www.onvif.org/ver10/schedule/wsdl/schedule.wsdl "
 #url+="http://www.onvif.org/ver10/pacs/types.xsd "
 #url+="http://www.onvif.org/onvif/ver10/network/wsdl/remotediscovery.wsdl "
-
+name=devicemgmt
 if [ "$1" == "clean" ];then
     #删除configure.sh以外的所有文件
     #ls | grep "[^configure.sh]" | xargs rm -rf
     rm xml -rf
     rm onvif.h -rf
-    rm soapC.c soapH.h soapStub.h -rf
-    rm soapClientLib.c soapClient.c -rf
-    rm soapServerLib.c  soapServer.c -rf
-    rm DeviceBinding.nsmap -rf
+    rm "$name"C.c "$name"H.h "$name"Stub.h -rf
+    rm "$name"ClientLib.c "$name"Client.c -rf
+    rm "$name"ServerLib.c  "$name"Server.c -rf
+    rm RemoteDiscoveryBinding.nsmap wsdd.nsmap -rf
 else 
     echo $url 
     # -c 表示生成c代码，默认生产cpp代码
@@ -43,7 +43,7 @@ else
         echo "Error"
         exit -1
     fi
-    soapcpp2 -I../gsoap-2.8/gsoap/ onvif.h
+    soapcpp2 -p"$name" -I../gsoap-2.8/gsoap/ onvif.h
     if [ $? -ne 0 ];then
         echo "Error"
         exit -1

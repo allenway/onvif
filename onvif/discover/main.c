@@ -1,5 +1,5 @@
-#include "soapH.h"
-#include "../gsoap/plugin/wsddapi.h"
+#include "discoverH.h"
+#include "../plugin/wsddapi.h"
 // 必须包含nsmap文件，否则编译通不过
 #include "wsdd.nsmap"
 #include <stdio.h>
@@ -129,7 +129,6 @@ int main()
 	while(1)
 	{
 		ret = 0;
-	//	listenPort(3702,0);
 #if 0	//unicast test
 		endpoint = "soap.udp://192.168.110.71:3702";
 		types = "dn:NetworkVideoTransmitter";
@@ -137,7 +136,7 @@ int main()
 		types = "tds:Device";
 		ret |= probeUnicast(endpoint,types,scopes,5);
 #else 	//multicast test
-		char *endpoint = "soap.udp://192.168.16.128:3702";
+		//char *endpoint = "soap.udp://192.168.110.71:3702";
 		ret = probeMulticast(endpoint,types,scopes,5);
 #endif
 		if(ret)

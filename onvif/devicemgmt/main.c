@@ -1,4 +1,4 @@
-#include "soapH.h"
+#include "devicemgmtH.h"
 // 必须包含nsmap文件，否则编译通不过
 #include "DeviceBinding.nsmap"
 #include <stdio.h>
@@ -14,7 +14,7 @@ int main()
 
 	services.IncludeCapability = xsd__boolean__true_;
 	ret = soap_call___tds__GetServices(soap,
-			"http://192.168.110.128/onvif/device_service",
+			"http://192.168.110.71/onvif/device_service",
 			NULL,	//soap action
 			&services,
 			&servicesResponse);

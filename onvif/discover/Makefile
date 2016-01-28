@@ -1,7 +1,7 @@
 #create by liulu
 #TARGET生成的程序名
 TARGET = wsdd 
-#TARGET + libdiscover.a
+TARGET += libdiscover.a
 CONFIGURE = ./configure
 P1 = p1.patch
 
@@ -9,20 +9,21 @@ P1 = p1.patch
 GSOAP_DIR ?= ../gsoap-2.8
 GSOAP_SDK = $(GSOAP_DIR)/gsoap
 
-#依赖的目标文件，由对应的.c或.cpp生成
-OBJ += main.o 
-OBJ += event.o
-OBJ += soapC.o
-OBJ += soapClient.o  
-#OBJ += soapServer.o  
-#OBJ += soapServerLib.o
-#OBJ += soapClientLib.o  
+#生成应用程序的依赖
+OBJ_A += main.o 
+OBJ_A += ../plugin/wsddapi.o
+OBJ_A += ../plugin/wsaapi.o
+
+#生成库的依赖
+OBJ_L += event.o
+OBJ_L += discoverC.o
+OBJ_L += discoverClient.o  
+#OBJ_L += discoverServer.o  
+#OBJ_L += discoverServerLib.o
+#OBJ_L += discoverClientLib.o  
 
 
-#直接使用源码文件链接，这样就不需要使用-lgsoap++
-#OBJ += $(GSOAP_SDK)/stdsoap2.o
-OBJ += $(GSOAP_SDK)/plugin/wsddapi.o
-OBJ += $(GSOAP_SDK)/plugin/wsaapi.o
+
 
 #用于交叉编译
 #CROSS_COMPILE = arm-fsl-linux-gnueabi-
@@ -33,11 +34,17 @@ CFLAGS += -I$(GSOAP_SDK)
 #CPPFLAGS += -I.
 #链接器，使用ld会有问题,使用g++
 LD = $(CROSS_COMPILE)gcc
-LDFLAGS = $(GSOAP_SDK)/libgsoap.a
+LDFLAGS = 
+#归档器
+AR = $(CROSS_COMPILE)ar
+ARFLAGS = rcs
 
 all: $(TARGET)
-$(TARGET): $(OBJ)
-	$(LD) $^ $(LDFLAGS) -o $@
+wsdd:$(OBJ_A) libdiscover.a $(GSOAP_SDK)/libgsoap.a
+#-Xlinker "-(" -Xlinker "-)" 解决编译库顺序依赖问题
+	$(LD) $(LDFLAGS) -Xlinker "-(" $^ -Xlinker "-)" -o $@
+libdiscover.a:$(OBJ_L)
+	$(AR) $(ARFLAGS) $@ $^
 config:
 	$(CONFIGURE)
 	patch -p1 < $(P1)
@@ -46,7 +53,8 @@ config:
 distclean:clean config_clean
 #清除编译产生的.o文件
 clean:
-	rm $(OBJ) -rf	
+	rm $(OBJ_A) -rf
+	rm $(OBJ_L) -rf
 	rm $(TARGET) -rf
 #清除config产生的源文件
 config_clean:

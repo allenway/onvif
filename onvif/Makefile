@@ -5,21 +5,24 @@ TARGET = rhanvr
 CONFIGURE = ./configure
 #P1 = p1.patch
 #gsoap源码目录
-GSOAP_DIR ?= ../gosap-2.8
+GSOAP_DIR ?= gsoap-2.8
 GSOAP_SDK = $(GSOAP_DIR)/gsoap
 #依赖的目标文件，由对应的.c或.cpp生成
 OBJ += main.o
 
 #依赖的模块
 MODULE += discover devicemgmt
+
 #依赖的静态库
-LIBA += discover/libdiscover.a
+LIBA += discover/libdiscover.a 
+LIBA += $(GSOAP_SDK)/libgsoap.a
+
 #依赖的动态库
 LIBSO +=
 
 #用于交叉编译
 #CROSS_COMPILE = arm-fsl-linux-gnueabi-
-CC = $(CROSS_COMPILE)gcc
+CC = $(CROSS_COMPILE)g++
 CPP = $(CROSS_COMPILE)g++
 CFLAGS += -I. 
 CFLAGS += -I$(GSOAP_SDK)
@@ -28,13 +31,15 @@ CPPFLAGS += -I$(GSOAP_SDK)
 
 #链接器，使用ld会有问题,使用g++
 LD = $(CROSS_COMPILE)g++
+LDFLAGS += $(GSOAP_SDK)/libgsoap.a
 
-#编译工程
+#编译工程,要先编译插件,因为有的模块会依赖插件
 all:module $(TARGET)
 	@echo "build complete!"
 
-$(TARGET):$(LIBA) $(LIBSO) $(OBJ)
-	$(LD) $(LIBA) $(LIBSO) $(OBJ)  -o $@
+$(TARGET):$(OBJ) $(LIBA) $(LIBSO)
+#-Xlinker "-(" -Xlinker "-)" 解决编译库顺序依赖问题
+	$(LD) $(LDFLAGS) -Xlinker "-(" $^ -Xlinker "-)" -o $@
 	
 
 
@@ -64,11 +69,11 @@ module_config:
 	@echo $@ complete!
 module:
 	@echo $@ ...
-	$(foreach dir,$(MODULE),make -C $(dir))
+	$(foreach dir,$(MODULE),make -C $(dir);)
 	@echo $@ complete!
 module_distclean:
 	@echo $@ ...
-	$(foreach dir,$(MODULE),make -C $(dir) distclean)
+	$(foreach dir,$(MODULE),make -C $(dir) distclean;)
 	@echo $@ complete!
 module_clean:
 #gsoap目录不进行clean动作,以减少编译时间
