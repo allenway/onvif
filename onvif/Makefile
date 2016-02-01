@@ -1,47 +1,20 @@
 #create by liulu
 #TARGET生成的程序名
 SHELL = bash
-TARGET = rhanvr
 CONFIGURE = ./configure
-#P1 = p1.patch
-#gsoap源码目录
-GSOAP_DIR ?= gsoap-2.8
-GSOAP_SDK = $(GSOAP_DIR)/gsoap
-#依赖的目标文件，由对应的.c或.cpp生成
-OBJ += main.o
-
 #依赖的模块
-MODULE += discover devicemgmt
+MODULE += gsoap-2.8
+MODULE += discover 
+MODULE += devicemgmt
+MODULE += media
 
-#依赖的静态库
-LIBA += discover/libdiscover.a 
-LIBA += $(GSOAP_SDK)/libgsoap.a
-
-#依赖的动态库
-LIBSO +=
 
 #用于交叉编译
 #CROSS_COMPILE = arm-fsl-linux-gnueabi-
-CC = $(CROSS_COMPILE)g++
-CPP = $(CROSS_COMPILE)g++
-CFLAGS += -I. 
-CFLAGS += -I$(GSOAP_SDK)
-CPPFLAGS += -I. 
-CPPFLAGS += -I$(GSOAP_SDK)
-
-#链接器，使用ld会有问题,使用g++
-LD = $(CROSS_COMPILE)g++
-LDFLAGS += $(GSOAP_SDK)/libgsoap.a
 
 #编译工程,要先编译插件,因为有的模块会依赖插件
 all:module $(TARGET)
 	@echo "build complete!"
-
-$(TARGET):$(OBJ) $(LIBA) $(LIBSO)
-#-Xlinker "-(" -Xlinker "-)" 解决编译库顺序依赖问题
-	$(LD) $(LDFLAGS) -Xlinker "-(" $^ -Xlinker "-)" -o $@
-	
-
 
 #编译模块
 module_config:
@@ -111,11 +84,6 @@ clean:module_clean
 config:module_config
 	@echo $@ ...
 	$(CONFIGURE)
-#如果有补丁文件，需要对源码进行打补丁
-ifneq ($(P1),)
-	patch -p1 < $(P1)
-endif
-	@echo $@ complete!
 
 #清除config产生的源文件
 config_clean:

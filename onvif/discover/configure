@@ -25,7 +25,8 @@
 #url+="http://www.onvif.org/ver10/schedule/wsdl/schedule.wsdl "
 #url+="http://www.onvif.org/ver10/pacs/types.xsd "
 url+="http://www.onvif.org/onvif/ver10/network/wsdl/remotediscovery.wsdl "
-name=discover
+name=soap
+p1=p1.patch
 if [ "$1" == "clean" ];then
     #删除configure.sh以外的所有文件
     #ls | grep "[^configure.sh]" | xargs rm -rf
@@ -38,7 +39,7 @@ if [ "$1" == "clean" ];then
 else 
     echo $url 
     # -c 表示生成c代码，默认生产cpp代码
-    wsdl2h -c -s -t../gsoap-2.8/gsoap/typemap.dat -o onvif.h $url
+    wsdl2h -c -s -t./typemap.dat -o onvif.h $url
     if [ $? -ne 0 ];then
         echo "Error"
         exit -1
@@ -50,5 +51,9 @@ else
     fi
     mkdir -p xml 
     mv *.xml xml
+
+    if [ "$p1" != "" ];then
+        patch -p1 < "$p1"
+    fi
 fi
 

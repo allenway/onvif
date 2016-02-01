@@ -25,7 +25,9 @@ url+="http://www.onvif.org/onvif/ver10/device/wsdl/devicemgmt.wsdl   "
 #url+="http://www.onvif.org/ver10/schedule/wsdl/schedule.wsdl "
 #url+="http://www.onvif.org/ver10/pacs/types.xsd "
 #url+="http://www.onvif.org/onvif/ver10/network/wsdl/remotediscovery.wsdl "
-name=devicemgmt
+name=soap
+#p1=p1.patch
+
 if [ "$1" == "clean" ];then
     #删除configure.sh以外的所有文件
     #ls | grep "[^configure.sh]" | xargs rm -rf
@@ -34,15 +36,17 @@ if [ "$1" == "clean" ];then
     rm "$name"C.c "$name"H.h "$name"Stub.h -rf
     rm "$name"ClientLib.c "$name"Client.c -rf
     rm "$name"ServerLib.c  "$name"Server.c -rf
-    rm RemoteDiscoveryBinding.nsmap wsdd.nsmap -rf
+    rm DeviceBinding.nsmap -rf
 else 
     echo $url 
     # -c 表示生成c代码，默认生产cpp代码
-    wsdl2h -c -s -t../gsoap-2.8/gsoap/typemap.dat -o onvif.h $url
+    wsdl2h -c -s -t./typemap.dat -o onvif.h $url
     if [ $? -ne 0 ];then
         echo "Error"
         exit -1
     fi
+    #添加ws-security支持，用于鉴权
+    echo '#import "wsse.h" //autoadd by liulu,2016-1-30,for ws-security' >> onvif.h
     soapcpp2 -p"$name" -I../gsoap-2.8/gsoap/ onvif.h
     if [ $? -ne 0 ];then
         echo "Error"
@@ -50,5 +54,9 @@ else
     fi
     mkdir -p xml 
     mv *.xml xml
+
+    if [ "$p1" != "" ];then
+        patch -p1 < "$p1"
+    fi
 fi
 
