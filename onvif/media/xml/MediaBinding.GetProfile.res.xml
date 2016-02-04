@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope
+  xmlns:SOAP-ENV="http://www.w3.org/2003/05/soap-envelope"
+  xmlns:SOAP-ENC="http://www.w3.org/2003/05/soap-encoding"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:chan="http://schemas.microsoft.com/ws/2005/02/duplex"
+  xmlns:wsa5="http://www.w3.org/2005/08/addressing"
+  xmlns:xmime="http://tempuri.org/xmime.xsd"
+  xmlns:xop="http://www.w3.org/2004/08/xop/include"
+  xmlns:tt="http://www.onvif.org/ver10/schema"
+  xmlns:wsrfbf="http://docs.oasis-open.org/wsrf/bf-2"
+  xmlns:wsnt="http://docs.oasis-open.org/wsn/b-2"
+  xmlns:wstop="http://docs.oasis-open.org/wsn/t-1"
+  xmlns:tr2="http://www.onvif.org/ver20/media/wsdl"
+  xmlns:trt="http://www.onvif.org/ver10/media/wsdl">
+ <SOAP-ENV:Header>
+ </SOAP-ENV:Header>
+ <SOAP-ENV:Body>
+  <trt:GetProfileResponse>
+   <trt:Profile token="" fixed="false">
+    <tt:Name></tt:Name>
+    <tt:VideoSourceConfiguration token="">
+     <tt:Name></tt:Name>
+     <tt:UseCount>0</tt:UseCount>
+     <tt:SourceToken></tt:SourceToken>
+     <tt:Bounds x="0" y="0" width="0" height="0">
+     </tt:Bounds>
+     <!-- extensibility element(s) -->
+
+     <!-- extensibility element(s) -->
+
+     <tt:Extension>
+      <tt:Rotate>
+       <tt:Mode>OFF</tt:Mode>
+       <tt:Degree>0</tt:Degree>
+       <tt:Extension>
+        <!-- extensibility element(s) -->
+
+        <!-- extensibility element(s) -->
+
+       </tt:Extension>
+      </tt:Rotate>
+      <tt:Extension>
+       <tt:LensDescription FocalLength="0.0">
+        <tt:Offset xsi:nil="true"/>        <tt:Projection xsi:nil="true"/>        <tt:Projection xsi:nil="true"/>        <tt:XFactor>0.0</tt:XFactor>
+        <!-- extensibility element(s) -->
+
+        <!-- extensibility element(s) -->
+
+       </tt:LensDescription>
+       <tt:LensDescription FocalLength="0.0">
+        <tt:Offset xsi:nil="true"/>        <tt:Projection xsi:nil="true"/>        <tt:Projection xsi:nil="true"/>        <tt:XFactor>0.0</tt:XFactor>
+        <!-- extensibility element(s) -->
+
+        <!-- extensibility element(s) -->
+
+       </tt:LensDescription>
+       <!-- extensibility element(s) -->
+
+       <!-- extensibility element(s) -->
+
+      </tt:Extension>
+     </tt:Extension>
+    </tt:VideoSourceConfiguration>
+    <tt:AudioSourceConfiguration token="">
+     <tt:Name></tt:Name>
+     <tt:UseCount>0</tt:UseCount>
+     <tt:SourceToken></tt:SourceToken>
+     <!-- extensibility element(s) -->
+
+     <!-- extensibility element(s) -->
+
+    </tt:AudioSourceConfiguration>
+    <tt:VideoEncoderConfiguration token="">
+     <tt:Name></tt:Name>
+     <tt:UseCount>0</tt:UseCount>
+     <tt:Encoding>JPEG</tt:Encoding>
+     <tt:Resolution>
+      <tt:Width>0</tt:Width>
+      <tt:Height>0</tt:Height>
+     </tt:Resolution>
+     <tt:Quality>0.0</tt:Quality>
+     <tt:RateControl>
+      <tt:FrameRateLimit>0</tt:FrameRateLimit>
+      <tt:EncodingInterval>0</tt:EncodingInterval>
+      <tt:BitrateLimit>0</tt:BitrateLimit>
+     </tt:RateControl>
+     <tt:MPEG4>
+      <tt:GovLength>0</tt:GovLength>
+      <tt:Mpeg4Profile>SP</tt:Mpeg4Profile>
+     </tt:MPEG4>
+     <tt:H264>
+      <tt:GovLength>0</tt:GovLength>
+      <tt:H264Profile>Baseline</tt:H264Profile>
+     </tt:H264>
+     <tt:Multicast>
+      <tt:Address>
+       <tt:Type>IPv4</tt:Type>
+       <tt:IPv4Address></tt:IPv4Address>
+       <tt:IPv6Address></tt:IPv6Address>
+      </tt:Address>
+      <tt:Port>0</tt:Port>
+      <tt:TTL>0</tt:TTL>
+      <tt:AutoStart>false</tt:AutoStart>
+      <!-- extensibility element(s) -->
+
+      <!-- extensibility element(s) -->
+
+     </tt:Multicast>
+     <tt:SessionTimeout>PT0S</tt:SessionTimeout>
+     <!-- extensibility element(s) -->
+
+     <!-- extensibility element(s) -->
+
+    </tt:VideoEncoderConfiguration>
+    <tt:AudioEncoderConfiguration token="">
+     <tt:Name></tt:Name>
+     <tt:UseCount>0</tt:UseCount>
+     <tt:Encoding>G711</tt:Encoding>
+     <tt:Bitrate>0</tt:Bitrate>
+     <tt:SampleRate>0</tt:SampleRate>
+     <tt:Multicast>
+      <tt:Address>
+       <tt:Type>IPv4</tt:Type>
+       <tt:IPv4Address></tt:IPv4Address>
+       <tt:IPv6Address></tt:IPv6Address>
+      </tt:Address>
+      <tt:Port>0</tt:Port>
+      <tt:TTL>0</tt:TTL>
+      <tt:AutoStart>false</tt:AutoStart>
+      <!-- extensibility element(s) -->
+
+      <!-- extensibility element(s) -->
+
+     </tt:Multicast>
+     <tt:SessionTimeout>PT0S</tt:SessionTimeout>
+     <!-- extensibility element(s) -->
+
+     <!-- extensibility element(s) -->
+
+    </tt:AudioEncoderConfiguration>
+    <tt:VideoAnalyticsConfiguration token="">
+     <tt:Name></tt:Name>
+     <tt:UseCount>0</tt:UseCount>
+     <tt:AnalyticsEngineConfiguration>
+      <tt:AnalyticsModule Name="" Type="">
+       <tt:Parameters>
+       </tt:Parameters>
+      </tt:AnalyticsModule>
+      <tt:AnalyticsModule Name="" Type="">
+       <tt:Parameters>
+       </tt:Parameters>
+      </tt:AnalyticsModule>
+      <tt:Extension>
+       <!-- extensibility element(s) -->
+
+       <!-- extensibility element(s) -->
+
+      </tt:Extension>
+     </tt:AnalyticsEngineConfiguration>
+     <tt:RuleEngineConfiguration>
+      <tt:Rule Name="" Type="">
+       <tt:Parameters>
+       </tt:Parameters>
+      </tt:Rule>
+      <tt:Rule Name="" Type="">
+       <tt:Parameters>
+       </tt:Parameters>
+      </tt:Rule>
+      <tt:Extension>
+       <!-- extensibility element(s) -->
+
+       <!-- extensibility element(s) -->
+
+      </tt:Extension>
+     </tt:RuleEngineConfiguration>
+     <!-- extensibility element(s) -->
+
+     <!-- extensibility element(s) -->
+
+    </tt:VideoAnalyticsConfiguration>
+    <tt:PTZConfiguration token="" MoveRamp="0" PresetRamp="0" PresetTourRamp="0">
+     <tt:Name></tt:Name>
+     <tt:UseCount>0</tt:UseCount>
+     <tt:NodeToken></tt:NodeToken>
+     <tt:DefaultAbsolutePantTiltPositionSpace></tt:DefaultAbsolutePantTiltPositionSpace>
+     <tt:DefaultAbsoluteZoomPositionSpace></tt:DefaultAbsoluteZoomPositionSpace>
+     <tt:DefaultRelativePanTiltTranslationSpace></tt:DefaultRelativePanTiltTranslationSpace>
+     <tt:DefaultRelativeZoomTranslationSpace></tt:DefaultRelativeZoomTranslationSpace>
+     <tt:DefaultContinuousPanTiltVelocitySpace></tt:DefaultContinuousPanTiltVelocitySpace>
+     <tt:DefaultContinuousZoomVelocitySpace></tt:DefaultContinuousZoomVelocitySpace>
+     <tt:DefaultPTZSpeed>
+      <tt:PanTilt x="0.0" y="0.0" space="">
+      </tt:PanTilt>
+      <tt:Zoom x="0.0" space="">
+      </tt:Zoom>
+     </tt:DefaultPTZSpeed>
+     <tt:DefaultPTZTimeout>0</tt:DefaultPTZTimeout>
+     <tt:PanTiltLimits>
+      <tt:Range>
+       <tt:URI></tt:URI>
+       <tt:XRange>
+        <tt:Min>0.0</tt:Min>
+        <tt:Max>0.0</tt:Max>
+       </tt:XRange>
+       <tt:YRange>
+        <tt:Min>0.0</tt:Min>
+        <tt:Max>0.0</tt:Max>
+       </tt:YRange>
+      </tt:Range>
+     </tt:PanTiltLimits>
+     <tt:ZoomLimits>
+      <tt:Range>
+       <tt:URI></tt:URI>
+       <tt:XRange>
+        <tt:Min>0.0</tt:Min>
+        <tt:Max>0.0</tt:Max>
+       </tt:XRange>
+      </tt:Range>
+     </tt:ZoomLimits>
+     <tt:Extension>
+      <!-- extensibility element(s) -->
+
+      <!-- extensibility element(s) -->
+
+      <tt:PTControlDirection>
+       <tt:EFlip>
+        <tt:Mode>OFF</tt:Mode>
+        <!-- extensibility element(s) -->
+
+        <!-- extensibility element(s) -->
+
+       </tt:EFlip>
+       <tt:Reverse>
+        <tt:Mode>OFF</tt:Mode>
+        <!-- extensibility element(s) -->
+
+        <!-- extensibility element(s) -->
+
+       </tt:Reverse>
+       <tt:Extension>
+        <!-- extensibility element(s) -->
+
+        <!-- extensibility element(s) -->
+
+       </tt:Extension>
+      </tt:PTControlDirection>
+      <tt:Extension>
+       <!-- extensibility element(s) -->
+
+       <!-- extensibility element(s) -->
+
+      </tt:Extension>
+     </tt:Extension>
+    </tt:PTZConfiguration>
+    <tt:MetadataConfiguration token="" CompressionType="">
+     <tt:Name></tt:Name>
+     <tt:UseCount>0</tt:UseCount>
+     <tt:PTZStatus>
+      <tt:Status>false</tt:Status>
+      <tt:Position>false</tt:Position>
+     </tt:PTZStatus>
+     <tt:Events>
+      <tt:Filter>
+       <!-- extensibility element(s) -->
+
+       <!-- extensibility element(s) -->
+
+      </tt:Filter>
+      <tt:SubscriptionPolicy>
+       <!-- extensibility element(s) -->
+
+       <!-- extensibility element(s) -->
+
+      </tt:SubscriptionPolicy>
+      <!-- extensibility element(s) -->
+
+      <!-- extensibility element(s) -->
+
+     </tt:Events>
+     <tt:Analytics>false</tt:Analytics>
+     <tt:Multicast>
+      <tt:Address>
+       <tt:Type>IPv4</tt:Type>
+       <tt:IPv4Address></tt:IPv4Address>
+       <tt:IPv6Address></tt:IPv6Address>
+      </tt:Address>
+      <tt:Port>0</tt:Port>
+      <tt:TTL>0</tt:TTL>
+      <tt:AutoStart>false</tt:AutoStart>
+      <!-- extensibility element(s) -->
+
+      <!-- extensibility element(s) -->
+
+     </tt:Multicast>
+     <tt:SessionTimeout>PT0S</tt:SessionTimeout>
+     <!-- extensibility element(s) -->
+
+     <!-- extensibility element(s) -->
+
+     <tt:AnalyticsEngineConfiguration>
+      <tt:AnalyticsModule Name="" Type="">
+       <tt:Parameters>
+       </tt:Parameters>
+      </tt:AnalyticsModule>
+      <tt:AnalyticsModule Name="" Type="">
+       <tt:Parameters>
+       </tt:Parameters>
+      </tt:AnalyticsModule>
+      <tt:Extension>
+       <!-- extensibility element(s) -->
+
+       <!-- extensibility element(s) -->
+
+      </tt:Extension>
+     </tt:AnalyticsEngineConfiguration>
+     <tt:Extension>
+      <!-- extensibility element(s) -->
+
+      <!-- extensibility element(s) -->
+
+     </tt:Extension>
+    </tt:MetadataConfiguration>
+    <tt:Extension>
+     <!-- extensibility element(s) -->
+
+     <!-- extensibility element(s) -->
+
+     <tt:AudioOutputConfiguration token="">
+      <tt:Name></tt:Name>
+      <tt:UseCount>0</tt:UseCount>
+      <tt:OutputToken></tt:OutputToken>
+      <tt:SendPrimacy></tt:SendPrimacy>
+      <tt:OutputLevel>0</tt:OutputLevel>
+      <!-- extensibility element(s) -->
+
+      <!-- extensibility element(s) -->
+
+     </tt:AudioOutputConfiguration>
+     <tt:AudioDecoderConfiguration token="">
+      <tt:Name></tt:Name>
+      <tt:UseCount>0</tt:UseCount>
+      <!-- extensibility element(s) -->
+
+      <!-- extensibility element(s) -->
+
+     </tt:AudioDecoderConfiguration>
+     <tt:Extension>
+      <!-- extensibility element(s) -->
+
+      <!-- extensibility element(s) -->
+
+     </tt:Extension>
+    </tt:Extension>
+   </trt:Profile>
+  </trt:GetProfileResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope
+  xmlns:SOAP-ENV="http://www.w3.org/2003/05/soap-envelope"
+  xmlns:SOAP-ENC="http://www.w3.org/2003/05/soap-encoding"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing"
+  xmlns:wsdd="http://schemas.xmlsoap.org/ws/2005/04/discovery"
+  xmlns:chan="http://schemas.microsoft.com/ws/2005/02/duplex"
+  xmlns:wsa5="http://www.w3.org/2005/08/addressing"
+  xmlns:xmime="http://tempuri.org/xmime.xsd"
+  xmlns:xop="http://www.w3.org/2004/08/xop/include"
+  xmlns:tt="http://www.onvif.org/ver10/schema"
+  xmlns:wsrfbf="http://docs.oasis-open.org/wsrf/bf-2"
+  xmlns:wsnt="http://docs.oasis-open.org/wsn/b-2"
+  xmlns:wstop="http://docs.oasis-open.org/wsn/t-1"
+  xmlns:tdn="http://www.onvif.org/ver10/network/wsdl"
+  xmlns:tds="http://www.onvif.org/ver10/device/wsdl">
+ <SOAP-ENV:Header>
+ </SOAP-ENV:Header>
+ <SOAP-ENV:Body>
+   <tds:SetNetworkInterfaces>
+    <tds:InterfaceToken></tds:InterfaceToken>
+    <tds:NetworkInterface>
+     <tt:Enabled>false</tt:Enabled>
+     <tt:Link>
+      <tt:AutoNegotiation>false</tt:AutoNegotiation>
+      <tt:Speed>0</tt:Speed>
+      <tt:Duplex>Full</tt:Duplex>
+     </tt:Link>
+     <tt:MTU>0</tt:MTU>
+     <tt:IPv4>
+      <tt:Enabled>false</tt:Enabled>
+      <tt:Manual>
+       <tt:Address></tt:Address>
+       <tt:PrefixLength>0</tt:PrefixLength>
+      </tt:Manual>
+      <tt:Manual>
+       <tt:Address></tt:Address>
+       <tt:PrefixLength>0</tt:PrefixLength>
+      </tt:Manual>
+      <tt:DHCP>false</tt:DHCP>
+     </tt:IPv4>
+     <tt:IPv6>
+      <tt:Enabled>false</tt:Enabled>
+      <tt:AcceptRouterAdvert>false</tt:AcceptRouterAdvert>
+      <tt:Manual>
+       <tt:Address></tt:Address>
+       <tt:PrefixLength>0</tt:PrefixLength>
+      </tt:Manual>
+      <tt:Manual>
+       <tt:Address></tt:Address>
+       <tt:PrefixLength>0</tt:PrefixLength>
+      </tt:Manual>
+      <tt:DHCP>Auto</tt:DHCP>
+     </tt:IPv6>
+     <tt:Extension>
+      <!-- extensibility element(s) -->
+
+      <!-- extensibility element(s) -->
+
+      <tt:Dot3>
+       <!-- extensibility element(s) -->
+
+       <!-- extensibility element(s) -->
+
+      </tt:Dot3>
+      <tt:Dot3>
+       <!-- extensibility element(s) -->
+
+       <!-- extensibility element(s) -->
+
+      </tt:Dot3>
+      <tt:Dot11>
+       <tt:SSID></tt:SSID>
+       <tt:Mode>Ad-hoc</tt:Mode>
+       <tt:Alias></tt:Alias>
+       <tt:Priority></tt:Priority>
+       <tt:Security>
+        <tt:Mode>None</tt:Mode>
+        <tt:Dot1X></tt:Dot1X>
+       </tt:Security>
+       <!-- extensibility element(s) -->
+
+       <!-- extensibility element(s) -->
+
+      </tt:Dot11>
+      <tt:Dot11>
+       <tt:SSID></tt:SSID>
+       <tt:Mode>Ad-hoc</tt:Mode>
+       <tt:Alias></tt:Alias>
+       <tt:Priority></tt:Priority>
+       <tt:Security>
+        <tt:Mode>None</tt:Mode>
+        <tt:Dot1X></tt:Dot1X>
+       </tt:Security>
+       <!-- extensibility element(s) -->
+
+       <!-- extensibility element(s) -->
+
+      </tt:Dot11>
+      <tt:Extension>
+       <!-- extensibility element(s) -->
+
+       <!-- extensibility element(s) -->
+
+      </tt:Extension>
+     </tt:Extension>
+    </tds:NetworkInterface>
+   </tds:SetNetworkInterfaces>
+
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

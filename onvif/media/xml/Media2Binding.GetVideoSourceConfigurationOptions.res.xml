@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope
+  xmlns:SOAP-ENV="http://www.w3.org/2003/05/soap-envelope"
+  xmlns:SOAP-ENC="http://www.w3.org/2003/05/soap-encoding"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:chan="http://schemas.microsoft.com/ws/2005/02/duplex"
+  xmlns:wsa5="http://www.w3.org/2005/08/addressing"
+  xmlns:xmime="http://tempuri.org/xmime.xsd"
+  xmlns:xop="http://www.w3.org/2004/08/xop/include"
+  xmlns:tt="http://www.onvif.org/ver10/schema"
+  xmlns:wsrfbf="http://docs.oasis-open.org/wsrf/bf-2"
+  xmlns:wsnt="http://docs.oasis-open.org/wsn/b-2"
+  xmlns:wstop="http://docs.oasis-open.org/wsn/t-1"
+  xmlns:tr2="http://www.onvif.org/ver20/media/wsdl"
+  xmlns:trt="http://www.onvif.org/ver10/media/wsdl">
+ <SOAP-ENV:Header>
+ </SOAP-ENV:Header>
+ <SOAP-ENV:Body>
+  <tr2:GetVideoSourceConfigurationOptionsResponse>
+   <tr2:Options>
+    <tt:BoundsRange>
+     <tt:XRange>
+      <tt:Min>0</tt:Min>
+      <tt:Max>0</tt:Max>
+     </tt:XRange>
+     <tt:YRange>
+      <tt:Min>0</tt:Min>
+      <tt:Max>0</tt:Max>
+     </tt:YRange>
+     <tt:WidthRange>
+      <tt:Min>0</tt:Min>
+      <tt:Max>0</tt:Max>
+     </tt:WidthRange>
+     <tt:HeightRange>
+      <tt:Min>0</tt:Min>
+      <tt:Max>0</tt:Max>
+     </tt:HeightRange>
+    </tt:BoundsRange>
+    <tt:VideoSourceTokensAvailable></tt:VideoSourceTokensAvailable>
+    <tt:VideoSourceTokensAvailable></tt:VideoSourceTokensAvailable>
+    <tt:Extension>
+     <!-- extensibility element(s) -->
+
+     <!-- extensibility element(s) -->
+
+     <tt:Rotate>
+      <tt:Mode>OFF</tt:Mode>
+      <tt:Mode>OFF</tt:Mode>
+      <tt:DegreeList>
+       <tt:Items>0</tt:Items>
+       <tt:Items>0</tt:Items>
+      </tt:DegreeList>
+      <tt:Extension>
+       <!-- extensibility element(s) -->
+
+       <!-- extensibility element(s) -->
+
+      </tt:Extension>
+     </tt:Rotate>
+     <tt:Extension>
+      <!-- extensibility element(s) -->
+
+      <!-- extensibility element(s) -->
+
+     </tt:Extension>
+    </tt:Extension>
+   </tr2:Options>
+  </tr2:GetVideoSourceConfigurationOptionsResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

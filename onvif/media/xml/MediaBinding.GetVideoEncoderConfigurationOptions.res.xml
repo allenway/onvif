@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope
+  xmlns:SOAP-ENV="http://www.w3.org/2003/05/soap-envelope"
+  xmlns:SOAP-ENC="http://www.w3.org/2003/05/soap-encoding"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:chan="http://schemas.microsoft.com/ws/2005/02/duplex"
+  xmlns:wsa5="http://www.w3.org/2005/08/addressing"
+  xmlns:xmime="http://tempuri.org/xmime.xsd"
+  xmlns:xop="http://www.w3.org/2004/08/xop/include"
+  xmlns:tt="http://www.onvif.org/ver10/schema"
+  xmlns:wsrfbf="http://docs.oasis-open.org/wsrf/bf-2"
+  xmlns:wsnt="http://docs.oasis-open.org/wsn/b-2"
+  xmlns:wstop="http://docs.oasis-open.org/wsn/t-1"
+  xmlns:tr2="http://www.onvif.org/ver20/media/wsdl"
+  xmlns:trt="http://www.onvif.org/ver10/media/wsdl">
+ <SOAP-ENV:Header>
+ </SOAP-ENV:Header>
+ <SOAP-ENV:Body>
+  <trt:GetVideoEncoderConfigurationOptionsResponse>
+   <trt:Options>
+    <tt:QualityRange>
+     <tt:Min>0</tt:Min>
+     <tt:Max>0</tt:Max>
+    </tt:QualityRange>
+    <tt:JPEG>
+     <tt:ResolutionsAvailable>
+      <tt:Width>0</tt:Width>
+      <tt:Height>0</tt:Height>
+     </tt:ResolutionsAvailable>
+     <tt:ResolutionsAvailable>
+      <tt:Width>0</tt:Width>
+      <tt:Height>0</tt:Height>
+     </tt:ResolutionsAvailable>
+     <tt:FrameRateRange>
+      <tt:Min>0</tt:Min>
+      <tt:Max>0</tt:Max>
+     </tt:FrameRateRange>
+     <tt:EncodingIntervalRange>
+      <tt:Min>0</tt:Min>
+      <tt:Max>0</tt:Max>
+     </tt:EncodingIntervalRange>
+    </tt:JPEG>
+    <tt:MPEG4>
+     <tt:ResolutionsAvailable>
+      <tt:Width>0</tt:Width>
+      <tt:Height>0</tt:Height>
+     </tt:ResolutionsAvailable>
+     <tt:ResolutionsAvailable>
+      <tt:Width>0</tt:Width>
+      <tt:Height>0</tt:Height>
+     </tt:ResolutionsAvailable>
+     <tt:GovLengthRange>
+      <tt:Min>0</tt:Min>
+      <tt:Max>0</tt:Max>
+     </tt:GovLengthRange>
+     <tt:FrameRateRange>
+      <tt:Min>0</tt:Min>
+      <tt:Max>0</tt:Max>
+     </tt:FrameRateRange>
+     <tt:EncodingIntervalRange>
+      <tt:Min>0</tt:Min>
+      <tt:Max>0</tt:Max>
+     </tt:EncodingIntervalRange>
+     <tt:Mpeg4ProfilesSupported>SP</tt:Mpeg4ProfilesSupported>
+     <tt:Mpeg4ProfilesSupported>SP</tt:Mpeg4ProfilesSupported>
+    </tt:MPEG4>
+    <tt:H264>
+     <tt:ResolutionsAvailable>
+      <tt:Width>0</tt:Width>
+      <tt:Height>0</tt:Height>
+     </tt:ResolutionsAvailable>
+     <tt:ResolutionsAvailable>
+      <tt:Width>0</tt:Width>
+      <tt:Height>0</tt:Height>
+     </tt:ResolutionsAvailable>
+     <tt:GovLengthRange>
+      <tt:Min>0</tt:Min>
+      <tt:Max>0</tt:Max>
+     </tt:GovLengthRange>
+     <tt:FrameRateRange>
+      <tt:Min>0</tt:Min>
+      <tt:Max>0</tt:Max>
+     </tt:FrameRateRange>
+     <tt:EncodingIntervalRange>
+      <tt:Min>0</tt:Min>
+      <tt:Max>0</tt:Max>
+     </tt:EncodingIntervalRange>
+     <tt:H264ProfilesSupported>Baseline</tt:H264ProfilesSupported>
+     <tt:H264ProfilesSupported>Baseline</tt:H264ProfilesSupported>
+    </tt:H264>
+    <tt:Extension>
+     <!-- extensibility element(s) -->
+
+     <!-- extensibility element(s) -->
+
+     <tt:JPEG>
+      <tt:ResolutionsAvailable>
+       <tt:Width>0</tt:Width>
+       <tt:Height>0</tt:Height>
+      </tt:ResolutionsAvailable>
+      <tt:ResolutionsAvailable>
+       <tt:Width>0</tt:Width>
+       <tt:Height>0</tt:Height>
+      </tt:ResolutionsAvailable>
+      <tt:FrameRateRange>
+       <tt:Min>0</tt:Min>
+       <tt:Max>0</tt:Max>
+      </tt:FrameRateRange>
+      <tt:EncodingIntervalRange>
+       <tt:Min>0</tt:Min>
+       <tt:Max>0</tt:Max>
+      </tt:EncodingIntervalRange>
+      <tt:BitrateRange>
+       <tt:Min>0</tt:Min>
+       <tt:Max>0</tt:Max>
+      </tt:BitrateRange>
+      <!-- extensibility element(s) -->
+
+      <!-- extensibility element(s) -->
+
+     </tt:JPEG>
+     <tt:MPEG4>
+      <tt:ResolutionsAvailable>
+       <tt:Width>0</tt:Width>
+       <tt:Height>0</tt:Height>
+      </tt:ResolutionsAvailable>
+      <tt:ResolutionsAvailable>
+       <tt:Width>0</tt:Width>
+       <tt:Height>0</tt:Height>
+      </tt:ResolutionsAvailable>
+      <tt:GovLengthRange>
+       <tt:Min>0</tt:Min>
+       <tt:Max>0</tt:Max>
+      </tt:GovLengthRange>
+      <tt:FrameRateRange>
+       <tt:Min>0</tt:Min>
+       <tt:Max>0</tt:Max>
+      </tt:FrameRateRange>
+      <tt:EncodingIntervalRange>
+       <tt:Min>0</tt:Min>
+       <tt:Max>0</tt:Max>
+      </tt:EncodingIntervalRange>
+      <tt:Mpeg4ProfilesSupported>SP</tt:Mpeg4ProfilesSupported>
+      <tt:Mpeg4ProfilesSupported>SP</tt:Mpeg4ProfilesSupported>
+      <tt:BitrateRange>
+       <tt:Min>0</tt:Min>
+       <tt:Max>0</tt:Max>
+      </tt:BitrateRange>
+      <!-- extensibility element(s) -->
+
+      <!-- extensibility element(s) -->
+
+     </tt:MPEG4>
+     <tt:H264>
+      <tt:ResolutionsAvailable>
+       <tt:Width>0</tt:Width>
+       <tt:Height>0</tt:Height>
+      </tt:ResolutionsAvailable>
+      <tt:ResolutionsAvailable>
+       <tt:Width>0</tt:Width>
+       <tt:Height>0</tt:Height>
+      </tt:ResolutionsAvailable>
+      <tt:GovLengthRange>
+       <tt:Min>0</tt:Min>
+       <tt:Max>0</tt:Max>
+      </tt:GovLengthRange>
+      <tt:FrameRateRange>
+       <tt:Min>0</tt:Min>
+       <tt:Max>0</tt:Max>
+      </tt:FrameRateRange>
+      <tt:EncodingIntervalRange>
+       <tt:Min>0</tt:Min>
+       <tt:Max>0</tt:Max>
+      </tt:EncodingIntervalRange>
+      <tt:H264ProfilesSupported>Baseline</tt:H264ProfilesSupported>
+      <tt:H264ProfilesSupported>Baseline</tt:H264ProfilesSupported>
+      <tt:BitrateRange>
+       <tt:Min>0</tt:Min>
+       <tt:Max>0</tt:Max>
+      </tt:BitrateRange>
+      <!-- extensibility element(s) -->
+
+      <!-- extensibility element(s) -->
+
+     </tt:H264>
+     <tt:Extension>
+      <!-- extensibility element(s) -->
+
+      <!-- extensibility element(s) -->
+
+     </tt:Extension>
+    </tt:Extension>
+   </trt:Options>
+  </trt:GetVideoEncoderConfigurationOptionsResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

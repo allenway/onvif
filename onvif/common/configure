@@ -1,0 +1,9 @@
+#!/bin/bash
+#create by liulu
+#2016-1-27
+if [ "$1" == "clean" ];then
+    echo "config clean ..."
+else
+    echo "config ..."
+fi
+
